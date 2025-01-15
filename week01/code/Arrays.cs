@@ -40,7 +40,14 @@ public static class Arrays
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
 
-        data.
-        data.GetRange(amount, 0);
+        // Used the GetRange function to get the number from data which equals the amount such as {4, 5}. Also used GetRange
+        // to get the numbers from index of 0 such as {1, 2, 3}.
+        
+        var lastNumbers = data.GetRange(amount, data.Count - amount);
+        var firstNumbers = data.GetRange(0, amount);
+
+        data.Clear();
+        data.AddRange(lastNumbers);
+        data.AddRange(firstNumbers);
     }
 }
