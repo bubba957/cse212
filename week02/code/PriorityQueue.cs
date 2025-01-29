@@ -9,7 +9,7 @@
     /// </summary>
     /// <param name="value">The value</param>
     /// <param name="priority">The priority</param>
-    public void Enqueue(string value, int priority)
+    public void Enqueue(string value, int priority) 
     {
         var newNode = new PriorityItem(value, priority);
         _queue.Add(newNode);

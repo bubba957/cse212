@@ -4,7 +4,7 @@
 
     public static void Run()
     {
-        int[] data = [
+        int[] data1 = [ 
             50, 9, 24, 100, 7, 75, 93, 24, 17, 16, 97, 6, 18, 81, 48, 37, 49, 33, 60, 3, 99, 32, 88, 29, 65, 20, 35, 33,
             15, 81, 31, 93, 17, 5, 5, 79, 12, 91, 18, 31, 12, 94, 39, 98, 10, 72, 20, 79, 100, 27, 46, 28, 50, 1, 7, 14,
             78, 100, 55, 26, 48, 33, 96, 77, 69, 8, 33, 36, 42, 98, 42, 32, 49, 65, 1, 82, 30, 74, 73, 89, 23, 76, 25,
@@ -18,13 +18,25 @@
             65
         ];
 
-        Console.WriteLine($"Number of items in the collection: {data.Length}");
-        Console.WriteLine($"Number of duplicates : {CountDuplicates(data)}");
+        Console.WriteLine($"Number of items in the collection: {data1.Length}");
+        Console.WriteLine($"Number of duplicates : {CountDuplicates(data1)}");
     }
 
-    private static int CountDuplicates(int[] data)
+    private static int CountDuplicates(int[] data1)
     {
         // Add code here.
-        return 0;
+        var unique = new HashSet<int>();
+        var duplicate = 0;
+
+        foreach (var i in data1) {
+            if (!unique.Contains(i)) {
+                unique.Add(i);
+            }
+            else if (unique.Contains(i)) {
+                duplicate++;
+            }
+        }
+
+        return duplicate;
     }
 }

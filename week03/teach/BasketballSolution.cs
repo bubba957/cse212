@@ -20,10 +20,10 @@ public class BasketballSolution
         var players = new Dictionary<string, int>();
 
         using var reader = new TextFieldParser("basketball.csv");
-        reader.TextFieldType = FieldType.Delimited;
+        // reader.TextFieldType = FieldType.Delimited;
         reader.SetDelimiters(",");
         reader.ReadFields(); // ignore header row
-        while (!reader.EndOfData)
+        while (!reader.EndOfData) 
         {
             var fields = reader.ReadFields()!;
             var playerId = fields[0];

@@ -43,6 +43,10 @@ public static class SetsAndMaps
         {
             var fields = line.Split(",");
             // TODO Problem 2 - ADD YOUR CODE HERE
+            var degree = fields[4];
+            degree.Count();
+
+            // var number = 1
         }
 
         return degrees;
@@ -66,8 +70,45 @@ public static class SetsAndMaps
     /// </summary>
     public static bool IsAnagram(string word1, string word2)
     {
-        // TODO Problem 3 - ADD YOUR CODE HERE
-        return false;
+        // TODO Problem 3 - Return false if length is not the same. Counts and compares how many times each letter 
+        // appears.
+        var tf = true;
+        
+        if (word1.Length != word2.Length) {
+            tf = false;
+        }
+
+        var anagrams1 = new Dictionary<char, int>();
+        var anagrams2 = new Dictionary<char, int>();
+
+        // Count frequencies for string 1
+        foreach (char c in word1)
+        {
+            if (anagrams1.ContainsKey(c))
+                anagrams1[c]++;
+            else
+                anagrams1[c] = 1;
+        }
+
+        // Count frequencies for string 2
+        foreach (char c in word2)
+        {
+            if (anagrams2.ContainsKey(c))
+                anagrams2[c]++;
+            else
+                anagrams2[c] = 1;
+        }
+
+        // Compare frequencies
+        foreach (var pair in anagrams1)
+        {
+            if (!anagrams2.ContainsKey(pair.Key) || anagrams2[pair.Key] != pair.Value)
+                tf = false;
+            else if (anagrams2.ContainsKey(pair.Key) || anagrams2[pair.Key] == pair.Value)
+                tf = true;
+        }
+
+        return tf;
     }
 
     /// <summary>

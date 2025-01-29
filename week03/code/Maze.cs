@@ -1,8 +1,10 @@
+using System.Data;
+
 /// <summary>
 /// Defines a maze using a dictionary. The dictionary is provided by the
 /// user when the Maze object is created. The dictionary will contain the
 /// following mapping:
-///
+/// 
 /// (x,y) : [left, right, up, down]
 ///
 /// 'x' and 'y' are integers and represents locations in the maze.
@@ -33,6 +35,15 @@ public class Maze
     public void MoveLeft()
     {
         // FILL IN CODE
+        // foreach (int n in _mazeMap) {
+        // if (!_mazeMap.ContainsKey(1, 1) != )
+        // }
+        // int mazeMap = 1;
+        var val = new[] {1, 2, 3, 4, 5, 6};
+
+        foreach (KeyValuePair<ValueTuple<int, int>, bool[]> n in _mazeMap) {
+            if (n == (1, val))
+        }
     }
 
     /// <summary>

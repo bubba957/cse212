@@ -33,7 +33,7 @@
      */
     private static void DisplaySumPairs(int[] numbers)
     {
-        var valuesSeen = new HashSet<int>();
+        var valuesSeen = new HashSet<int>(); 
         foreach (var n in numbers)
         {
             // If 10-n is in the values_seen set then I know that
