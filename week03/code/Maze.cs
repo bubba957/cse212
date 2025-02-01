@@ -41,9 +41,9 @@ public class Maze
         // int mazeMap = 1;
         var val = new[] {1, 2, 3, 4, 5, 6};
 
-        foreach (KeyValuePair<ValueTuple<int, int>, bool[]> n in _mazeMap) {
-            if (n == (1, val))
-        }
+        // foreach (KeyValuePair<ValueTuple<int, int>, bool[]> n in _mazeMap) {
+        //     if (n == (1, val))
+        // }
     }
 
     /// <summary>

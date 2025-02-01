@@ -2,123 +2,125 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 // DO NOT MODIFY THIS FILE
 
-// [TestClass]
-// public class FindPairsTests
-// {
-//     [TestMethod]
-//     public void FindPairs_TwoPairs()
-//     {
-//         var actual = SetsAndMaps.FindPairs(["am", "at", "ma", "if", "fi"]);
-//         var expected = new[] { "ma & am", "fi & if" };
+[TestClass]
+public class FindPairsTests
+{
+    [TestMethod]
+    public void FindPairs_TwoPairs()
+    {
+        var actual = SetsAndMaps.FindPairs(["am", "at", "ma", "if", "fi"]);
+        var expected = new[] { "ma & am", "fi & if" };
 
-//         Assert.AreEqual(expected.Length, actual.Length);
-//         Assert.AreEqual(Canonicalize(expected), Canonicalize(actual));
-//     }
+        Assert.AreEqual(expected.Length, actual.Length);
+        Assert.AreEqual(Canonicalize(expected), Canonicalize(actual));
+    }
 
-//     [TestMethod]
-//     public void FindPairs_OnePair()
-//     {
-//         var actual = SetsAndMaps.FindPairs(["ab", "bc", "cd", "de", "ba"]);
-//         var expected = new[] { "ba & ab" };
+    [TestMethod]
+    public void FindPairs_OnePair()
+    {
+        var actual = SetsAndMaps.FindPairs(["ab", "bc", "cd", "de", "ba"]);
+        var expected = new[] { "ba & ab" };
 
-//         Assert.AreEqual(expected.Length, actual.Length);
-//         Assert.AreEqual(Canonicalize(expected), Canonicalize(actual));
-//     }
+        Assert.AreEqual(expected.Length, actual.Length);
+        Assert.AreEqual(Canonicalize(expected), Canonicalize(actual));
+    }
 
-//     [TestMethod]
-//     public void FindPairs_SameChar()
-//     {
-//         var actual = SetsAndMaps.FindPairs(["ab", "aa", "ba"]);
-//         var expected = new[] { "ba & ab" };
+    [TestMethod]
+    public void FindPairs_SameChar()
+    {
+        var actual = SetsAndMaps.FindPairs(["ab", "aa", "ba"]);
+        var expected = new[] { "ba & ab" };
 
-//         Assert.AreEqual(expected.Length, actual.Length);
-//         Assert.AreEqual(Canonicalize(expected), Canonicalize(actual));
-//     }
+        Assert.AreEqual(expected.Length, actual.Length);
+        Assert.AreEqual(Canonicalize(expected), Canonicalize(actual));
+    }
 
-//     [TestMethod]
-//     public void FindPairs_ThreePairs()
-//     {
-//         var actual = SetsAndMaps.FindPairs(["ab", "ba", "ac", "ad", "da", "ca"]);
-//         var expected = new[] { "ba & ab", "da & ad", "ca & ac" };
+    [TestMethod]
+    public void FindPairs_ThreePairs()
+    {
+        var actual = SetsAndMaps.FindPairs(["ab", "ba", "ac", "ad", "da", "ca"]);
+        var expected = new[] { "ba & ab", "da & ad", "ca & ac" };
 
-//         Assert.AreEqual(expected.Length, actual.Length);
-//         Assert.AreEqual(Canonicalize(expected), Canonicalize(actual));
-//     }
+        Assert.AreEqual(expected.Length, actual.Length);
+        Assert.AreEqual(Canonicalize(expected), Canonicalize(actual));
+    }
 
-//     [TestMethod]
-//     public void FindPairs_ThreePairsNumbers()
-//     {
-//         var actual = SetsAndMaps.FindPairs(["23", "84", "49", "13", "32", "46", "91", "99", "94", "31", "57", "14"]);
-//         var expected = new[] { "32 & 23", "94 & 49", "31 & 13" };
+    [TestMethod]
+    public void FindPairs_ThreePairsNumbers()
+    {
+        var actual = SetsAndMaps.FindPairs(["23", "84", "49", "13", "32", "46", "91", "99", "94", "31", "57", "14"]);
+        var expected = new[] { "32 & 23", "94 & 49", "31 & 13" };
 
-//         Assert.AreEqual(expected.Length, actual.Length);
-//         Assert.AreEqual(Canonicalize(expected), Canonicalize(actual));
-//     }
+        Assert.AreEqual(expected.Length, actual.Length);
+        Assert.AreEqual(Canonicalize(expected), Canonicalize(actual));
+    }
 
-//     [TestMethod]
-//     public void FindPairs_NoPairs()
-//     {
-//         var actual = SetsAndMaps.FindPairs(["ab", "ac"]);
-//         var expected = new string[0];
+    [TestMethod]
+    public void FindPairs_NoPairs()
+    {
+        var actual = SetsAndMaps.FindPairs(["ab", "ac"]);
+        var expected = new string[0];
 
-//         Assert.AreEqual(expected.Length, actual.Length);
-//         Assert.AreEqual(Canonicalize(expected), Canonicalize(actual));
-//     }
+        Assert.AreEqual(expected.Length, actual.Length);
+        Assert.AreEqual(Canonicalize(expected), Canonicalize(actual));
+    }
 
-//     // If this test takes longer than 5 seconds to run, your code is too inefficient.
-//     //  On my machine, this executes in ~200 ms with an efficient implementation.
-//     [TestMethod, Timeout(5000)]
-//     public void FindPairs_NoPairs_Efficiency()
-//     {
-//         var count = 1_000_000;
-//         bool done = false;
-//         var input = new List<string>(count);
-//         for (char a = (char)0x0; a <= 0xffff; ++a)
-//         {
-//             for (char b = (char)0x0; b <= 0xffff; ++b)
-//             {
-//                 char[] chars = ['a', 'b'];
-//                 string s = new(chars);
-//                 input.Add(s);
+    // If this test takes longer than 5 seconds to run, your code is too inefficient.
+    //  On my machine, this executes in ~200 ms with an efficient implementation.
+    [TestMethod, Timeout(5000)]
+    public void FindPairs_NoPairs_Efficiency()
+    {
+        var count = 1_000_000;
+        bool done = false;
+        var input = new List<string>(count);
+        for (char a = (char)0x0; a <= 0xffff; ++a)
+        {
+            for (char b = (char)0x0; b <= 0xffff; ++b)
+            {
+                char[] chars = ['a', 'b'];
+                string s = new(chars);
+                input.Add(s);
 
-//                 done = input.Count >= count;
-//                 if (done)
-//                 {
-//                     break;
-//                 }
-//             }
+                done = input.Count >= count;
+                if (done)
+                {
+                    break;
+                }
+            }
 
-//             if (done)
-//             {
-//                 break;
-//             }
-//         }
+            if (done)
+            {
+                break;
+            }
+        }
 
-//         var actual = SetsAndMaps.FindPairs(input.ToArray());
-//         Assert.AreEqual(0, actual.Length);
-//     }
+        var actual = SetsAndMaps.FindPairs(input.ToArray());
+        Assert.AreEqual(0, actual.Length);
+    }
 
-//     private string Canonicalize(string[] array)
-//     {
-//         if (array.Length == 0)
-//         {
-//             return "";
-//         }
+    private string Canonicalize(string[] array)
+    {
+        if (array.Length == 0)
+        {
+            return "";
+        }
 
-//         var canonicalString = array.Select(item =>
-//         {
-//             var parts = item.Split('&');
-//             return parts
-//                 .Select(part => part.Trim())
-//                 .OrderBy(x => x)
-//                 .Aggregate((current, next) => current + "&" + next);
-//         })
-//         .OrderBy(x => x)
-//         .Aggregate((current, next) => current + "," + next);
+        var canonicalString = array.Select(item =>
+        {
+            var parts = item.Split('&');
+            return parts
+                .Select(part => part.Trim())
+                .OrderBy(x => x)
+                .Aggregate((current, next) => current + "&" + next);
+        })
+        .OrderBy(x => x)
+        .Aggregate((current, next) => current + "," + next);
 
-//         return canonicalString;
-//     }
-// }
+        return canonicalString;
+    }
+}
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
 // [TestClass]
 // public class SummarizeDegreesTests
@@ -149,6 +151,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 //         CollectionAssert.AreEqual(expected, result);
 //     }
 // }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
 // [TestClass]
 // public class IsAnagramTests
@@ -204,103 +208,107 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 //     }
 // }
 
-[TestClass]
-public class MazeTests
-{
-    [TestMethod]
-    public void Maze_Basic()
-    {
-        Dictionary<ValueTuple<int, int>, bool[]> map = SetupMazeMap();
-        var maze = new Maze(map);
-        Assert.AreEqual("Current location (x=1, y=1)", maze.GetStatus());
-        AssertThrowsInvalidOperationException(maze.MoveUp);
-        AssertThrowsInvalidOperationException(maze.MoveLeft);
-        maze.MoveRight();
-        AssertThrowsInvalidOperationException(maze.MoveRight);
-        maze.MoveDown();
-        maze.MoveDown();
-        maze.MoveDown();
-        maze.MoveRight();
-        maze.MoveRight();
-        maze.MoveUp();
-        maze.MoveRight();
-        maze.MoveDown();
-        maze.MoveLeft();
-        AssertThrowsInvalidOperationException(maze.MoveDown);
-        maze.MoveRight();
-        maze.MoveDown();
-        maze.MoveDown();
-        maze.MoveRight();
-        Assert.AreEqual("Current location (x=6, y=6)", maze.GetStatus());
-    }
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
-    private void AssertThrowsInvalidOperationException(Action action)
-    {
-        try
-        {
-            action();
-            Assert.Fail("Exception should have been thrown.");
-        }
-        catch (InvalidOperationException e)
-        {
-            Assert.AreEqual("Can't go that way!", e.Message);
-        }
-        catch (AssertFailedException)
-        {
-            throw;
-        }
-        catch (Exception e)
-        {
-            Assert.Fail(
-                 string.Format("Unexpected exception of type {0} caught: {1}",
-                                e.GetType(), e.Message)
-            );
-        }
-    }
+// [TestClass]
+// public class MazeTests
+// {
+//     [TestMethod]
+//     public void Maze_Basic()
+//     {
+//         Dictionary<ValueTuple<int, int>, bool[]> map = SetupMazeMap();
+//         var maze = new Maze(map);
+//         Assert.AreEqual("Current location (x=1, y=1)", maze.GetStatus());
+//         AssertThrowsInvalidOperationException(maze.MoveUp);
+//         AssertThrowsInvalidOperationException(maze.MoveLeft);
+//         maze.MoveRight();
+//         AssertThrowsInvalidOperationException(maze.MoveRight);
+//         maze.MoveDown();
+//         maze.MoveDown();
+//         maze.MoveDown();
+//         maze.MoveRight();
+//         maze.MoveRight();
+//         maze.MoveUp();
+//         maze.MoveRight();
+//         maze.MoveDown();
+//         maze.MoveLeft();
+//         AssertThrowsInvalidOperationException(maze.MoveDown);
+//         maze.MoveRight();
+//         maze.MoveDown();
+//         maze.MoveDown();
+//         maze.MoveRight();
+//         Assert.AreEqual("Current location (x=6, y=6)", maze.GetStatus());
+//     }
 
-    private static Dictionary<ValueTuple<int, int>, bool[]> SetupMazeMap()
-    {
-        Dictionary<ValueTuple<int, int>, bool[]> map = new() {
-            { (1, 1), new[] { false, true, false, true } },
-            { (1, 2), new[] { false, true, true, false } },
-            { (1, 3), new[] { false, false, false, false } },
-            { (1, 4), new[] { false, true, false, true } },
-            { (1, 5), new[] { false, false, true, true } },
-            { (1, 6), new[] { false, false, true, false } },
-            { (2, 1), new[] { true, false, false, true } },
-            { (2, 2), new[] { true, false, true, true } },
-            { (2, 3), new[] { false, false, true, true } },
-            { (2, 4), new[] { true, true, true, false } },
-            { (2, 5), new[] { false, false, false, false } },
-            { (2, 6), new[] { false, false, false, false } },
-            { (3, 1), new[] { false, false, false, false } },
-            { (3, 2), new[] { false, false, false, false } },
-            { (3, 3), new[] { false, false, false, false } },
-            { (3, 4), new[] { true, true, false, true } },
-            { (3, 5), new[] { false, false, true, true } },
-            { (3, 6), new[] { false, false, true, false } },
-            { (4, 1), new[] { false, true, false, false } },
-            { (4, 2), new[] { false, false, false, false } },
-            { (4, 3), new[] { false, true, false, true } },
-            { (4, 4), new[] { true, true, true, false } },
-            { (4, 5), new[] { false, false, false, false } },
-            { (4, 6), new[] { false, false, false, false } },
-            { (5, 1), new[] { true, true, false, true } },
-            { (5, 2), new[] { false, false, true, true } },
-            { (5, 3), new[] { true, true, true, true } },
-            { (5, 4), new[] { true, false, true, true } },
-            { (5, 5), new[] { false, false, true, true } },
-            { (5, 6), new[] { false, true, true, false } },
-            { (6, 1), new[] { true, false, false, false } },
-            { (6, 2), new[] { false, false, false, false } },
-            { (6, 3), new[] { true, false, false, false } },
-            { (6, 4), new[] { false, false, false, false } },
-            { (6, 5), new[] { false, false, false, false } },
-            { (6, 6), new[] { true, false, false, false } }
-        };
-        return map;
-    }
-}
+//     private void AssertThrowsInvalidOperationException(Action action)
+//     {
+//         try
+//         {
+//             action();
+//             Assert.Fail("Exception should have been thrown.");
+//         }
+//         catch (InvalidOperationException e)
+//         {
+//             Assert.AreEqual("Can't go that way!", e.Message);
+//         }
+//         catch (AssertFailedException)
+//         {
+//             throw;
+//         }
+//         catch (Exception e)
+//         {
+//             Assert.Fail(
+//                  string.Format("Unexpected exception of type {0} caught: {1}",
+//                                 e.GetType(), e.Message)
+//             );
+//         }
+//     }
+
+//     private static Dictionary<ValueTuple<int, int>, bool[]> SetupMazeMap()
+//     {
+//         Dictionary<ValueTuple<int, int>, bool[]> map = new() {
+//             { (1, 1), new[] { false, true, false, true } },
+//             { (1, 2), new[] { false, true, true, false } },
+//             { (1, 3), new[] { false, false, false, false } },
+//             { (1, 4), new[] { false, true, false, true } },
+//             { (1, 5), new[] { false, false, true, true } },
+//             { (1, 6), new[] { false, false, true, false } },
+//             { (2, 1), new[] { true, false, false, true } },
+//             { (2, 2), new[] { true, false, true, true } },
+//             { (2, 3), new[] { false, false, true, true } },
+//             { (2, 4), new[] { true, true, true, false } },
+//             { (2, 5), new[] { false, false, false, false } },
+//             { (2, 6), new[] { false, false, false, false } },
+//             { (3, 1), new[] { false, false, false, false } },
+//             { (3, 2), new[] { false, false, false, false } },
+//             { (3, 3), new[] { false, false, false, false } },
+//             { (3, 4), new[] { true, true, false, true } },
+//             { (3, 5), new[] { false, false, true, true } },
+//             { (3, 6), new[] { false, false, true, false } },
+//             { (4, 1), new[] { false, true, false, false } },
+//             { (4, 2), new[] { false, false, false, false } },
+//             { (4, 3), new[] { false, true, false, true } },
+//             { (4, 4), new[] { true, true, true, false } },
+//             { (4, 5), new[] { false, false, false, false } },
+//             { (4, 6), new[] { false, false, false, false } },
+//             { (5, 1), new[] { true, true, false, true } },
+//             { (5, 2), new[] { false, false, true, true } },
+//             { (5, 3), new[] { true, true, true, true } },
+//             { (5, 4), new[] { true, false, true, true } },
+//             { (5, 5), new[] { false, false, true, true } },
+//             { (5, 6), new[] { false, true, true, false } },
+//             { (6, 1), new[] { true, false, false, false } },
+//             { (6, 2), new[] { false, false, false, false } },
+//             { (6, 3), new[] { true, false, false, false } },
+//             { (6, 4), new[] { false, false, false, false } },
+//             { (6, 5), new[] { false, false, false, false } },
+//             { (6, 6), new[] { true, false, false, false } }
+//         };
+//         return map;
+//     }
+// }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
 // [TestClass]
 // public class EarthquakeDailySummaryTests

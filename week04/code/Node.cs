@@ -9,4 +9,4 @@ public class Node
     {
         this.Data = data;
     }
-}
+} 

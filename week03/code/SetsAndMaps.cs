@@ -22,6 +22,14 @@ public static class SetsAndMaps
     public static string[] FindPairs(string[] words)
     {
         // TODO Problem 1 - ADD YOUR CODE HERE
+        var wordss = new HashSet<string>();
+
+        for (var i = 0; i < words.Length; i++) {
+            if (words.Contains(words[i])) {
+                Console.WriteLine("{words} & {words[i]}");
+            }
+        }
+
         return [];
     }
 
@@ -39,14 +47,19 @@ public static class SetsAndMaps
     public static Dictionary<string, int> SummarizeDegrees(string filename)
     {
         var degrees = new Dictionary<string, int>();
+
         foreach (var line in File.ReadLines(filename))
         {
             var fields = line.Split(",");
-            // TODO Problem 2 - ADD YOUR CODE HERE
-            var degree = fields[4];
-            degree.Count();
+            // TODO Problem 2 - created if else statment to find how many instances were in each degree
+            var degree = fields[3];
 
-            // var number = 1
+            if (!degrees.ContainsKey(degree)) {
+                degrees[degree] = 1;
+            }
+            else {
+                degrees[degree] += 1; 
+            }
         }
 
         return degrees;
@@ -72,7 +85,7 @@ public static class SetsAndMaps
     {
         // TODO Problem 3 - Return false if length is not the same. Counts and compares how many times each letter 
         // appears.
-        var tf = true;
+        var tf = false;
         
         if (word1.Length != word2.Length) {
             tf = false;
@@ -104,7 +117,7 @@ public static class SetsAndMaps
         {
             if (!anagrams2.ContainsKey(pair.Key) || anagrams2[pair.Key] != pair.Value)
                 tf = false;
-            else if (anagrams2.ContainsKey(pair.Key) || anagrams2[pair.Key] == pair.Value)
+            else 
                 tf = true;
         }
 

@@ -6,7 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 public class InsertTailTests
 {
     [TestMethod]
-    public void InsertTail_Empty()
+    public void InsertTail_Empty() 
     {
         var ll = new LinkedList();
 
