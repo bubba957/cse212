@@ -130,8 +130,8 @@ public class LinkedList : IEnumerable<int>
     public void Remove(int value)
     {
         // TODO Problem 3
-        
-        while (value != )
+
+        // while (value != )
     }
 
     /// <summary>
