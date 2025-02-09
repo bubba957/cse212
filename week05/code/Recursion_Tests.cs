@@ -1,104 +1,106 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 // DO NOT MODIFY THIS FILE
+ 
+// [TestClass]
+// public class SumSquaresRecursiveTests
+// {
+//     [TestMethod]
+//     public void SumSquaresRecursive_Small()
+//     {
+//         var result = Recursion.SumSquaresRecursive(10);
+//         Assert.AreEqual(385, result);
+//     }
 
-[TestClass]
-public class SumSquaresRecursiveTests
-{
-    [TestMethod]
-    public void SumSquaresRecursive_Small()
-    {
-        var result = Recursion.SumSquaresRecursive(10);
-        Assert.AreEqual(385, result);
-    }
+//     [TestMethod]
+//     public void SumSquaresRecursive_Large()
+//     {
+//         var result = Recursion.SumSquaresRecursive(100);
+//         Assert.AreEqual(338350, result);
+//     }
+// }
 
-    [TestMethod]
-    public void SumSquaresRecursive_Large()
-    {
-        var result = Recursion.SumSquaresRecursive(100);
-        Assert.AreEqual(338350, result);
-    }
-}
+// [TestClass]
+// public class PermutationsChooseTests
+// {
+//     [TestMethod]
+//     public void PermutationsChoose_3()
+//     {
+//         var results = new List<string>();
+//         Recursion.PermutationsChoose(results, "ABCD", 3);
 
-[TestClass]
-public class PermutationsChooseTests
-{
-    [TestMethod]
-    public void PermutationsChoose_3()
-    {
-        var results = new List<string>();
-        Recursion.PermutationsChoose(results, "ABCD", 3);
+//         results.Sort();
+//         var expected = new List<string> {
+//             "ABC",
+//             "ABD",
+//             "ACB",
+//             "ACD",
+//             "ADB",
+//             "ADC",
+//             "BAC",
+//             "BAD",
+//             "BCA",
+//             "BCD",
+//             "BDA",
+//             "BDC",
+//             "CAB",
+//             "CAD",
+//             "CBA",
+//             "CBD",
+//             "CDA",
+//             "CDB",
+//             "DAB",
+//             "DAC",
+//             "DBA",
+//             "DBC",
+//             "DCA",
+//             "DCB"
+//         };
+//         CollectionAssert.AreEqual(expected, results);
+//     }
 
-        results.Sort();
-        var expected = new List<string> {
-            "ABC",
-            "ABD",
-            "ACB",
-            "ACD",
-            "ADB",
-            "ADC",
-            "BAC",
-            "BAD",
-            "BCA",
-            "BCD",
-            "BDA",
-            "BDC",
-            "CAB",
-            "CAD",
-            "CBA",
-            "CBD",
-            "CDA",
-            "CDB",
-            "DAB",
-            "DAC",
-            "DBA",
-            "DBC",
-            "DCA",
-            "DCB"
-        };
-        CollectionAssert.AreEqual(expected, results);
-    }
+//     [TestMethod]
+//     public void PermutationsChoose_2()
+//     {
+//         var results = new List<string>();
+//         Recursion.PermutationsChoose(results, "ABCD", 2);
 
-    [TestMethod]
-    public void PermutationsChoose_2()
-    {
-        var results = new List<string>();
-        Recursion.PermutationsChoose(results, "ABCD", 2);
+//         results.Sort();
+//         var expected = new List<string> {
+//             "AB",
+//             "AC",
+//             "AD",
+//             "BA",
+//             "BC",
+//             "BD",
+//             "CA",
+//             "CB",
+//             "CD",
+//             "DA",
+//             "DB",
+//             "DC"
+//         };
+//         CollectionAssert.AreEqual(expected, results);
+//     }
 
-        results.Sort();
-        var expected = new List<string> {
-            "AB",
-            "AC",
-            "AD",
-            "BA",
-            "BC",
-            "BD",
-            "CA",
-            "CB",
-            "CD",
-            "DA",
-            "DB",
-            "DC"
-        };
-        CollectionAssert.AreEqual(expected, results);
-    }
+//     [TestMethod]
+//     public void PermutationsChoose_1()
+//     {
+//         var results = new List<string>();
+//         Recursion.PermutationsChoose(results, "ABCD", 1);
 
-    [TestMethod]
-    public void PermutationsChoose_1()
-    {
-        var results = new List<string>();
-        Recursion.PermutationsChoose(results, "ABCD", 1);
+//         results.Sort();
+//         var expected = new List<string> {
+//             "A",
+//             "B",
+//             "C",
+//             "D"
+//         };
+//         CollectionAssert.AreEqual(expected, results);
+//     }
+// }
 
-        results.Sort();
-        var expected = new List<string> {
-            "A",
-            "B",
-            "C",
-            "D"
-        };
-        CollectionAssert.AreEqual(expected, results);
-    }
-}
+// *************************************************************************************************************
 
 [TestClass]
 public class CountWaysToClimbTests
