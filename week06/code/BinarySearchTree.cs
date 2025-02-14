@@ -1,6 +1,6 @@
 using System.Collections;
 
-public class BinarySearchTree : IEnumerable<int>
+public class BinarySearchTree : IEnumerable<int> 
 {
     private Node? _root;
 
@@ -81,6 +81,13 @@ public class BinarySearchTree : IEnumerable<int>
     private void TraverseBackward(Node? node, List<int> values)
     {
         // TODO Problem 3
+
+        if (node is not null)
+        {
+            TraverseForward(node.Right, values);
+            values.Add(node.Data);
+            TraverseForward(node.Left, values);
+        }
     }
 
     /// <summary>

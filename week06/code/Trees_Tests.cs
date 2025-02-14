@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 [TestClass]
 public class TreeInsertTests
-{
+{ 
     [TestMethod]
     public void TreeInsert_Basic()
     {

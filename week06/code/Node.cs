@@ -1,8 +1,10 @@
+using System.Globalization;
+
 public class Node
 {
     public int Data { get; set; }
     public Node? Right { get; private set; }
-    public Node? Left { get; private set; }
+    public Node? Left { get; private set; } 
 
     public Node(int data)
     {
@@ -12,6 +14,10 @@ public class Node
     public void Insert(int value)
     {
         // TODO Start Problem 1
+
+        if (value == Data) {
+            return;
+        }
 
         if (value < Data)
         {
@@ -34,12 +40,28 @@ public class Node
     public bool Contains(int value)
     {
         // TODO Start Problem 2
+
+        if (value == Data) {
+            return true;
+        }
+        else if (value < Data)
+        {
+            return true;
+        }
+        else if (value > Data)
+        {
+            return true;
+        }
+
         return false;
     }
 
     public int GetHeight()
     {
         // TODO Start Problem 4
+
+
+
         return 0; // Replace this line with the correct return statement(s)
     }
 }

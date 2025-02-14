@@ -8,7 +8,7 @@ public static class Trees
     /// first to the BST. The InsertMiddle function takes the whole list but also takes
     /// a range (first to last) to consider.  For the first call, the full range of 0 to
     /// Length-1 used.
-    /// </summary>
+    /// </summary> 
     public static BinarySearchTree CreateTreeFromSortedList(int[] sortedNumbers)
     {
         var bst = new BinarySearchTree(); // Create an empty BST to start with 
