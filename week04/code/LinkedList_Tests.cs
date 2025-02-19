@@ -121,7 +121,7 @@ public class RemoveTests
         ll.InsertHead(2);
         ll.Remove(2);
         Assert.AreEqual("<LinkedList>{}", ll.ToString());
-        Assert.IsTrue(ll.HeadAndTailAreNull());
+        Assert.IsTrue(ll.HeadAndTailAreNull()); 
     }
 
     [TestMethod]

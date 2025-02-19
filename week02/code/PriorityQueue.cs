@@ -6,7 +6,7 @@
     /// Add a new value to the queue with an associated priority.  The
     /// node is always added to the back of the queue regardless of 
     /// the priority.
-    /// </summary>
+    /// </summary> 
     /// <param name="value">The value</param>
     /// <param name="priority">The priority</param>
     public void Enqueue(string value, int priority) 

@@ -76,7 +76,7 @@ public class LinkedList : IEnumerable<int>
     /// Remove the last node (i.e. the tail) of the linked list.
     /// </summary>
     public void RemoveTail()
-    {
+    { 
         // TODO Problem 2
         if (_head == _tail) {
             _head = null;

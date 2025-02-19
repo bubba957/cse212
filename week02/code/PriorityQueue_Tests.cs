@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 [TestClass]
 public class PriorityQueueTests
 {
-    [TestMethod]
+    [TestMethod] 
     // Scenario: 
     // Expected Result: 
     // Defect(s) Found: 
